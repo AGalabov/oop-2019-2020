@@ -32,3 +32,5 @@
 ![equation](https://latex.codecogs.com/gif.latex?%5Csum_%7Bi%3D1%7D%5En%7B%5Cprod_%7Bj%3D1%7D%5Em%7B%5Cfrac%7Ba&plus;j%7D%7Bi&plus;j%7D%7D%7D).
 
 [Решение](./task4.cpp)
+
+[*Предишно упражнение*](../lab1)

@@ -16,6 +16,7 @@ E-mail: rostislav.stoyanov@gmail.com
 
 ## Структура:
 * [Упражнения](./exercises)
+* [Допълнителни задачи](./bonusTasks)
 
 ## Оценяване:
 * Текущ контрол (ТК)\

@@ -41,7 +41,7 @@ divideFromAgain(12)(3)(2); // result is 12 / 3 / 2 = 2
 divideWithAgain(12)(3)(2); // result is 2 / 3 / 12 ~ 0.5555
 ```
 
-* Напишете всяка една от функции от по-висок ред (ако все още не сте) `map`, `forEach`, `zip`, `reduce`. Извикайте ги като подавате различни **lambda** функции.
+* Напишете всяка една от функции от по-висок ред (ако все още не сте) `map`, `forEach`, `zip`, `reduce`, `each`, `some`, `find`. Извикайте ги като подавате различни **lambda** функции.
 * Направете ги шаблонни.
 
 _Пример:_
@@ -51,6 +51,9 @@ size_t size = 5;
 forEach<int>(arr, size, [] (const int& a) { 
     std::cout << a << " ";
 }); // prints 1 2 3 4 5
+each<int>(arr, size, [] (const int&a) { return a > 3}); // returns false
+some<int>(arr, size, [] (const int&a) { return a > 3 && a%2 == 0}); // returns true (because of 4)
+find<int>(arr, size, [] (const int&a) { return a%2 == 0}); // returns 2 ( the first occurance that satisfies the condition)
 std::cout << reduce<int>(arr, size, [] (int& acc, const int& val) {
     acc += val;
 }); // prints the sum: 15 (1 + 2 + 3 + 4 + 5)

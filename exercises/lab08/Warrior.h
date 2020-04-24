@@ -16,9 +16,7 @@ public:
     void getVal();
 
     void printPretty(std::ostream &out);
-    void printBinary(std::ostream &);
     static Warrior *read(std::istream &);
-    static Warrior *readBinary(std::istream &);
 
     void attack(Entity &);
     ~Warrior();

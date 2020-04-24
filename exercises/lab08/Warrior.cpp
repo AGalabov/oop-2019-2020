@@ -36,12 +36,6 @@ void Warrior::printPretty(std::ostream &out)
     out << this->endurance << " " << this->attackStrength << " " << this->kg << std::endl;
 }
 
-void Warrior::printBinary(std::ostream &out)
-{
-    out.write((char *)(&(Warrior::type)), sizeof(Warrior::type));
-    out.write((char *)this, sizeof(Warrior));
-}
-
 Warrior *Warrior::read(std::istream &in)
 {
     int X, Y, attackStrength, hp;
@@ -52,11 +46,4 @@ Warrior *Warrior::read(std::istream &in)
     in >> id >> X >> Y >> hp >> endurance >> attackStrength >> kg;
 
     return new Warrior(X, Y, id, endurance, attackStrength, kg);
-}
-
-Warrior *Warrior::readBinary(std::istream &in)
-{
-    Warrior *ent;
-    in.read((char *)ent, sizeof(Warrior));
-    return ent;
 }

@@ -52,8 +52,3 @@ void Entity::printPretty(std::ostream &out)
         << this->Y << " "
         << this->hp << " ";
 }
-
-void Entity::printBinary(std::ostream &out)
-{
-    out.write((char *)this, sizeof(Entity));
-}

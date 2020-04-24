@@ -34,5 +34,4 @@ public:
     virtual ~Entity();
 
     virtual void printPretty(std::ostream &) = 0;
-    virtual void printBinary(std::ostream &) = 0;
 };

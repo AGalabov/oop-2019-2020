@@ -18,9 +18,7 @@ public:
     void attack(Entity &);
 
     void printPretty(std::ostream &);
-    void printBinary(std::ostream &);
     static Mage *read(std::istream &);
-    static Mage *readBinary(std::istream &);
 
     ~Mage();
 };

@@ -41,12 +41,6 @@ void Mage::printPretty(std::ostream &out)
     out << this->mana << " " << this->spellStrength << std::endl;
 }
 
-void Mage::printBinary(std::ostream &out)
-{
-    out.write((char *)(&(Mage::type)), sizeof(Mage::type));
-    out.write((char *)this, sizeof(Mage));
-}
-
 Mage *Mage::read(std::istream &in)
 {
     int X, Y, spellStrength, hp;
@@ -57,15 +51,3 @@ Mage *Mage::read(std::istream &in)
 
     return new Mage(X, Y, id, mana, spellStrength);
 }
-
-Mage *Mage::readBinary(std::istream &in)
-{
-    Mage *ent;
-    in.read((char *)ent, sizeof(Mage));
-    return ent;
-}
-
-// Mage::Mage& operator=(const Mage& other){
-//   Player :: operator= ((Player)other);
-//   this -> mana = other.mana;
-// }

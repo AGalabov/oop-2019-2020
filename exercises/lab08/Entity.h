@@ -18,7 +18,7 @@ public:
 
     int getHp();
     long long getId();
-    virtual void getVal() = 0;
+    virtual void printVal() = 0;
 
     virtual void attack(Entity &) = 0;
     void takeDamage(int);

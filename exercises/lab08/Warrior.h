@@ -14,7 +14,7 @@ public:
 
     unsigned int getEndurance();
 
-    void getVal();
+    void printVal();
     void attack(Entity &);
 
     void print(std::ostream &out);

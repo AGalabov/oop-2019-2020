@@ -14,7 +14,7 @@ public:
     unsigned int getMana();
     void setMana(unsigned int);
 
-    void getVal();
+    void printVal();
     void attack(Entity &);
 
     void print(std::ostream &);

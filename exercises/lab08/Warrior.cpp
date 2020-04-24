@@ -24,7 +24,7 @@ void Warrior::attack(Entity &other)
     this->endurance -= 7;
 }
 
-void Warrior::getVal()
+void Warrior::printVal()
 {
     std::cout << "Warrior endurance: " << this->endurance << std::endl;
 }

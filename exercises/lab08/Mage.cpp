@@ -29,7 +29,7 @@ void Mage::attack(Entity &other)
     this->setMana(this->getMana() - 10);
 }
 
-void Mage::getVal()
+void Mage::printVal()
 {
     std::cout << "Mage mana: " << this->mana << std::endl;
 }

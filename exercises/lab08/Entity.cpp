@@ -10,7 +10,7 @@ Entity::Entity(double X, double Y, long long id)
 
 Entity::~Entity()
 {
-    std::cout << "Entity destructor for" << this->id << std::endl;
+    std::cout << "Entity destructor for " << this->id << std::endl;
 }
 
 long long Entity::getId()

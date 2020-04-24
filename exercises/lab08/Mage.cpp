@@ -9,7 +9,7 @@ Mage::Mage(double X, double Y, long long id, unsigned int mana, int spellStr)
 
 Mage::~Mage()
 {
-    std::cout << "Mage destructor for" << this->id << std::endl;
+    std::cout << "Mage destructor for " << this->id << std::endl;
 }
 
 unsigned int Mage::getMana()
@@ -48,6 +48,7 @@ Mage *Mage::read(std::istream &in)
     unsigned int mana;
 
     in >> id >> X >> Y >> hp >> mana >> spellStrength;
+    // Note we are ignored hp - we are creating them with full health
 
     return new Mage(X, Y, id, mana, spellStrength);
 }

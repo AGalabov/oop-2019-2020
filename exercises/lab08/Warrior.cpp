@@ -9,7 +9,7 @@ Warrior::Warrior(double X, double Y, long long id, unsigned int endurance, int a
 
 Warrior::~Warrior()
 {
-    std::cout << "Warrior destructor for" << this->id << std::endl;
+    std::cout << "Warrior destructor for " << this->id << std::endl;
 }
 
 unsigned int Warrior::getEndurance()
@@ -19,7 +19,7 @@ unsigned int Warrior::getEndurance()
 
 void Warrior::attack(Entity &other)
 {
-    std::cout << "Warrior attack";
+    std::cout << "Warrior attack" << std::endl;
     other.takeDamage(attackStrength);
     this->endurance -= 7;
 }
@@ -44,6 +44,7 @@ Warrior *Warrior::read(std::istream &in)
     double kg;
 
     in >> id >> X >> Y >> hp >> endurance >> attackStrength >> kg;
+    // Note we are ignored hp - we are creating them with full health
 
     return new Warrior(X, Y, id, endurance, attackStrength, kg);
 }

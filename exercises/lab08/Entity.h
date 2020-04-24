@@ -1,38 +1,38 @@
 #pragma once
-#include<iostream>
+#include <iostream>
 
-class Entity{
+class Entity
+{
 
-  public:
-  static const int type;
+public:
+    static const int type;
 
-  protected:
-  double X,Y;
-  long long id;
-  int hp;
+protected:
+    double X, Y;
+    long long id;
+    int hp;
 
+public:
+    Entity(double = 0.0, double = 0.0, long long = 1);
 
-  public:
-  Entity(double = 0.0, double = 0.0, long long = 1);
+    void setCoordinates(double, double);
 
-  void setCoordinates(double, double);
+    void move(double, double);
 
-  void move(double, double);
+    void takeDamage(int);
 
-  void takeDamage(int);
+    int getHp();
 
-  int getHp();
+    long long getId();
 
-  long long getId();
+    virtual void attack(Entity &) = 0;
 
-  virtual void attack(Entity&) = 0;
+    virtual void getVal() = 0;
 
-  virtual void getVal() = 0;
+    void printCoordinates();
 
-  void printCoordinates();
+    virtual ~Entity();
 
-  virtual ~Entity();
-
-  virtual void printPretty(std::ostream&) = 0;
-  virtual void printBinary(std::ostream&) = 0;
+    virtual void printPretty(std::ostream &) = 0;
+    virtual void printBinary(std::ostream &) = 0;
 };

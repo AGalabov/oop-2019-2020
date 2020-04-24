@@ -9,16 +9,14 @@ class Mage : public Entity
 public:
     static const int type = 0;
     Mage(double, double, long long, unsigned int = 85, int = 50);
+    ~Mage();
 
-    void setMana(unsigned int);
     unsigned int getMana();
+    void setMana(unsigned int);
 
     void getVal();
-
     void attack(Entity &);
 
-    void printPretty(std::ostream &);
+    void print(std::ostream &);
     static Mage *read(std::istream &);
-
-    ~Mage();
 };

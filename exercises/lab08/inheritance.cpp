@@ -30,7 +30,7 @@ int main()
 
     for (int i = 0; i < n; i++)
     {
-        entities[i]->printPretty(std::cout);
+        entities[i]->print(std::cout);
     }
 
     for (int i = 0; i < n; i++)

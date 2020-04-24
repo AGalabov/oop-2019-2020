@@ -1,20 +1,25 @@
 #include "Mage.h"
 
+const int Mage::type;
+
 Mage::Mage(double X, double Y, long long id, unsigned int mana, int spellStr)
     : Entity(X, Y, id), mana(mana), spellStrength(spellStr)
 {
 }
 
-const int Mage::type;
-
-void Mage::setMana(unsigned int mana)
+Mage::~Mage()
 {
-    this->mana = mana;
+    std::cout << "Mage destructor for" << this->id << std::endl;
 }
 
 unsigned int Mage::getMana()
 {
     return this->mana;
+}
+
+void Mage::setMana(unsigned int mana)
+{
+    this->mana = mana;
 }
 
 void Mage::attack(Entity &other)
@@ -29,15 +34,10 @@ void Mage::getVal()
     std::cout << "Mage mana: " << this->mana << std::endl;
 }
 
-Mage::~Mage()
-{
-    std::cout << "Mage destructor for" << this->id << std::endl;
-}
-
-void Mage::printPretty(std::ostream &out)
+void Mage::print(std::ostream &out)
 {
     out << Mage::type << " ";
-    Entity::printPretty(out);
+    Entity::print(out);
     out << this->mana << " " << this->spellStrength << std::endl;
 }
 

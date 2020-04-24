@@ -10,14 +10,13 @@ class Warrior : public Entity
 public:
     static const int type = 1;
     Warrior(double, double, long long, unsigned int = 100, int = 30, double = 69.92);
+    ~Warrior();
 
     unsigned int getEndurance();
 
     void getVal();
-
-    void printPretty(std::ostream &out);
-    static Warrior *read(std::istream &);
-
     void attack(Entity &);
-    ~Warrior();
+
+    void print(std::ostream &out);
+    static Warrior *read(std::istream &);
 };

@@ -8,15 +8,9 @@ Entity::Entity(double X, double Y, long long id)
     this->hp = 100;
 }
 
-void Entity::setCoordinates(double x, double y)
+Entity::~Entity()
 {
-    this->X = x;
-    this->Y = y;
-}
-
-void Entity::takeDamage(int dmg)
-{
-    this->hp -= dmg;
+    std::cout << "Entity destructor for" << this->id << std::endl;
 }
 
 long long Entity::getId()
@@ -29,23 +23,12 @@ int Entity::getHp()
     return this->hp > 0 ? this->hp : 0;
 }
 
-void Entity::move(double dx, double dy)
+void Entity::takeDamage(int dmg)
 {
-    this->X += dx;
-    this->Y += dy;
+    this->hp -= dmg;
 }
 
-void Entity::printCoordinates()
-{
-    std::cout << "X: " << X << " Y: " << Y << std::endl;
-}
-
-Entity::~Entity()
-{
-    std::cout << "Entity destructor for" << this->id << std::endl;
-}
-
-void Entity::printPretty(std::ostream &out)
+void Entity::print(std::ostream &out)
 {
     out << this->id << " "
         << this->X << " "

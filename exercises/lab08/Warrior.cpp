@@ -1,11 +1,16 @@
 #include "Warrior.h"
 
+const int Warrior::type;
+
 Warrior::Warrior(double X, double Y, long long id, unsigned int endurance, int attStrengh, double kg)
     : Entity(X, Y, id), endurance(endurance), attackStrength(attStrengh), kg(kg)
 {
 }
 
-const int Warrior::type;
+Warrior::~Warrior()
+{
+    std::cout << "Warrior destructor for" << this->id << std::endl;
+}
 
 unsigned int Warrior::getEndurance()
 {
@@ -24,15 +29,10 @@ void Warrior::getVal()
     std::cout << "Warrior endurance: " << this->endurance << std::endl;
 }
 
-Warrior::~Warrior()
-{
-    std::cout << "Warrior destructor for" << this->id << std::endl;
-}
-
-void Warrior::printPretty(std::ostream &out)
+void Warrior::print(std::ostream &out)
 {
     out << Warrior::type << " ";
-    Entity::printPretty(out);
+    Entity::print(out);
     out << this->endurance << " " << this->attackStrength << " " << this->kg << std::endl;
 }
 

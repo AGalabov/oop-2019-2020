@@ -1,0 +1,3 @@
+Consortium:test , count: 2 reliability rate: 0
+Private company:Private ,k = 2 ,reliability rate: 0
+State company:FMI reliability rate: 0.333333

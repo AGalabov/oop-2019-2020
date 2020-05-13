@@ -26,5 +26,10 @@ public:
     int getSuccessfulTasks() const;
 
     virtual bool perform(std::string) = 0;
-    double reliabilityRate();
+    double reliabilityRate() const;
+
+    virtual Company* clone() = 0;
+    virtual void printStatus(std::ostream&) const = 0;
+
+    friend std::ostream& operator<< (std::ostream&, const Company&);
 };

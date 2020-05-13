@@ -9,7 +9,7 @@ Warrior::Warrior(double X, double Y, long long id, unsigned int endurance, int a
 
 Warrior::~Warrior()
 {
-    std::cout << "Warrior destructor for " << this->id << std::endl;
+    //std::cout << "Warrior destructor for " << this->id << std::endl;
 }
 
 unsigned int Warrior::getEndurance()
@@ -47,4 +47,13 @@ Warrior *Warrior::read(std::istream &in)
     // Note we are ignored hp - we are creating them with full health
 
     return new Warrior(X, Y, id, endurance, attackStrength, kg);
+}
+
+int Warrior::getType(){
+    return Warrior::type;
+}
+
+void Warrior::writeToBinFile(std::ofstream& out){
+    out.write((char*)&(this->type),sizeof(int));
+    out.write((char*)this,sizeof(Warrior));
 }

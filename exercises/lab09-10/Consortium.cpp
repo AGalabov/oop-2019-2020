@@ -1,7 +1,8 @@
 #include "Consortium.h"
 #include<bits/stdc++.h>
+#include<math.h>
 
-Consortium::Consortium(): Company(), companies(nullptr), companiesNum(0)
+Consortium::Consortium(const std::string name = ""): Company(name), companies(nullptr), companiesNum(0),arraySize(0)
 {
 }
 
@@ -9,10 +10,12 @@ Consortium::Consortium(const std::string& name, Company** const companies, const
     : Company(name)
 {
     this -> companiesNum = size;
-    this -> companies = new Company*[size];
+    size_t newArraySize = ceil(log2(size));
+    this->arraySize = newArraySize;
+    this -> companies = new Company*[newArraySize];
     for(size_t i=0; i<size; ++i)
     {
-        this -> companies[i] = new Company(companies[i]);
+        this -> companies[i] = companies[i]->clone();
     }
 }
 
@@ -36,10 +39,11 @@ void Consortium::copy(const Consortium& other)
     this -> tasksReceived = other.tasksReceived;
     this -> successfulTasks = other.successfulTasks;
     this -> companiesNum = other.companiesNum;
-    this -> companies = new Company*[other.companiesNum];
+    this->arraySize = other.arraySize;
+    this -> companies = new Company*[other.arraySize];
     for(size_t i=0; i<other.companiesNum; ++i)
     {
-        this -> companies[i] = other.companies[i];
+        this -> companies[i] = other.companies[i]->clone();
     }
 }
 
@@ -90,4 +94,59 @@ bool Consortium::perform(std::string task)
     }
     std::cout << this -> name << " cannot perform the task: " << task << std::endl;
     return false;
+}
+
+Company* Consortium::clone(){
+    return new Consortium(*this);
+}
+
+void Consortium::add(Company* other){
+    if(companiesNum + 1 > arraySize){
+        resize();
+    }
+    companies[companiesNum++] = other->clone();
+}
+
+void Consortium::resize(){
+    if(arraySize == 0){
+        arraySize = 2;
+        companies = new Company*[arraySize];
+        return;
+    }
+
+    arraySize*=2;
+    Company** copy = new Company*[arraySize];
+
+    for(size_t i = 0;i<companiesNum;i++){
+        copy[i] = companies[i];  
+    }
+
+    delete[] companies;
+    companies = copy;
+}
+
+void Consortium::remove(std::string name){
+    size_t idxToDelete = -1;
+    for(size_t i = 0;i<companiesNum;i++){
+        if(companies[i]->getName() == name){
+            idxToDelete = i;
+        }
+    }
+
+    if(idxToDelete == -1){
+        std::cout << "Company with name: " << name << " not found" << std::endl;
+        return; 
+    }
+
+    Company* toDelete = companies[idxToDelete];
+    companies[idxToDelete] = companies[--companiesNum];
+    companies[companiesNum] = nullptr;
+    delete toDelete;
+}
+
+void Consortium::printStatus(std::ostream& os) const{
+    os << "Consortium:" << name << " , count: "<< companiesNum <<" reliability rate: " << reliabilityRate() << std::endl;
+    for(size_t i = 0; i<companiesNum;i++){
+        companies[i]->printStatus(os);
+    }
 }

@@ -19,4 +19,8 @@ public:
 
     void print(std::ostream &out);
     static Warrior *read(std::istream &);
+
+    int getType();
+
+    void writeToBinFile(std::ofstream&);
 };

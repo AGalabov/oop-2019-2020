@@ -6,4 +6,5 @@ class EntityFactory
 {
 public:
     static Entity *readEntity(std::istream &);
+    static Entity* readEntityBin(std::istream&);
 };

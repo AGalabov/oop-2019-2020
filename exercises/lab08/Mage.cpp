@@ -9,7 +9,7 @@ Mage::Mage(double X, double Y, long long id, unsigned int mana, int spellStr)
 
 Mage::~Mage()
 {
-    std::cout << "Mage destructor for " << this->id << std::endl;
+    //std::cout << "Mage destructor for " << this->id << std::endl;
 }
 
 unsigned int Mage::getMana()
@@ -51,4 +51,13 @@ Mage *Mage::read(std::istream &in)
     // Note we are ignored hp - we are creating them with full health
 
     return new Mage(X, Y, id, mana, spellStrength);
+}
+
+int Mage::getType(){
+    return Mage::type;
+}
+
+void Mage::writeToBinFile(std::ofstream& out){
+    out.write((char*)&(this->type),sizeof(int));
+    out.write((char*)this,sizeof(Mage));
 }

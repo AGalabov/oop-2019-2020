@@ -14,4 +14,10 @@ public:
     ~PrivateCompany();
 
     bool perform(std::string);
+
+    Company* clone();
+
+    void printStatus(std::ostream&) const;
+
+    friend std::ostream& operator<<(std::ostream&, Company&);
 };

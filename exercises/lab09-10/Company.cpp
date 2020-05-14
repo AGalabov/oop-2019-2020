@@ -66,11 +66,15 @@ int Company::getSuccessfulTasks() const
     return this->successfulTasks;
 }
 
-double Company::reliabilityRate()
+double Company::reliabilityRate() const
 {
     if (this->tasksReceived == 0)
     {
         return 0;
     }
     return (double)successfulTasks / tasksReceived;
+}
+
+std::ostream& operator<<(std::ostream& os, const Company& other){
+    other.printStatus(os);
 }

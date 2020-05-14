@@ -19,4 +19,7 @@ public:
 
     void print(std::ostream &);
     static Mage *read(std::istream &);
+
+    int getType();
+    void writeToBinFile(std::ofstream&);
 };

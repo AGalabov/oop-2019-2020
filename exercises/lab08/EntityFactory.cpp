@@ -16,3 +16,22 @@ Entity *EntityFactory::readEntity(std::istream &in)
         return Warrior::read(in);
     }
 }
+
+Entity* EntityFactory::readEntityBin(std::istream& in){
+        int currType = -1;
+        in.read((char*)&currType, sizeof(currType));
+
+        if(currType == Mage::type){
+            Mage* toRet = new Mage(0,0,0,0,0);
+            in.read((char*)toRet,sizeof(Mage));
+            return toRet;
+        }
+        else if(currType == Warrior::type){
+            Warrior* toRet = new Warrior(0,0,0,0,0,0);
+            in.read((char*)toRet,sizeof(Warrior));
+            return toRet;
+        }
+        else{
+            std::cout << "Bad entity type" << std::endl;
+        }
+}

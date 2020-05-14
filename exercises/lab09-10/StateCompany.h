@@ -14,4 +14,8 @@ public:
     ~StateCompany();
 
     bool perform(std::string);
+
+    Company* clone();
+    void printStatus(std::ostream&) const;
+
 };

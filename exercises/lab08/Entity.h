@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include<fstream>
 
 class Entity
 {
@@ -24,4 +25,8 @@ public:
     void takeDamage(int);
 
     virtual void print(std::ostream &) = 0;
+
+    virtual int getType() = 0;
+
+    virtual void writeToBinFile(std::ofstream&) = 0;
 };

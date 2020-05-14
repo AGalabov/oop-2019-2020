@@ -28,8 +28,8 @@ public:
     virtual bool perform(std::string) = 0;
     double reliabilityRate() const;
 
-    virtual Company* clone() = 0;
-    virtual void printStatus(std::ostream&) const = 0;
+    virtual Company *clone() = 0;
+    virtual void printStatus(std::ostream &) const = 0;
 
-    friend std::ostream& operator<< (std::ostream&, const Company&);
+    friend std::ostream &operator<<(std::ostream &, const Company &);
 };

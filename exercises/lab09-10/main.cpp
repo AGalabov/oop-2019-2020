@@ -2,7 +2,7 @@
 #include "PrivateCompany.h"
 #include "StateCompany.h"
 #include "Consortium.h"
-#include<fstream>
+#include <fstream>
 
 int main()
 {
@@ -21,19 +21,19 @@ int main()
     // std::cout << c.reliabilityRate();
 
     // std::cout << "==================\n";
-     StateCompany c1("FMI", 3);
-     std::cout << c1.reliabilityRate();
-     c1.perform("Learn algebra");
-     c1.perform("Learn coding");
-     c1.perform("Learn where the hot water is");
-     std::cout << c1.reliabilityRate();
+    StateCompany c1("FMI", 3);
+    std::cout << c1.reliabilityRate();
+    c1.perform("Learn algebra");
+    c1.perform("Learn coding");
+    c1.perform("Learn where the hot water is");
+    std::cout << c1.reliabilityRate();
 
-    Company** companies = new Company*[2];
+    Company **companies = new Company *[2];
 
     companies[0] = &c;
     companies[1] = &c1;
 
-     Consortium cons1("Name");
+    Consortium cons1("Name");
 
     // cons1.perform("Learn algebra");
     // cons1.perform("Learn coding");
@@ -42,8 +42,6 @@ int main()
 
     //Consortium cons2("Nashta firma", companies, 2);
 
-     
-
     // std::cout << cons1.reliabilityRate();
     // std::cout << cons2.reliabilityRate();
     // std::cout << cons2.reliabilityRate();
@@ -51,7 +49,6 @@ int main()
     cons1.setName("test");
     cons1.printStatus(std::cout);
 
-    
     std::cout << "==================\n";
     c.setName("Private");
     cons1.add(&c);

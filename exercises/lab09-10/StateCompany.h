@@ -15,7 +15,6 @@ public:
 
     bool perform(std::string);
 
-    Company* clone();
-    void printStatus(std::ostream&) const;
-
+    Company *clone();
+    void printStatus(std::ostream &) const;
 };

@@ -4,22 +4,25 @@
 #include "Consortium.h"
 #include <fstream>
 
-int main(){
-  PrivateCompany p1("Bulgarian B",2);
-  StateCompany s1 ("VV", 20);
+int main()
+{
+  PrivateCompany p1("Bulgarian B", 2);
+  StateCompany s1("VV", 20);
   Consortium c1("GG");
   c1.add(&p1);
-  PrivateCompany p2("DD",4);
+  PrivateCompany p2("DD", 4);
 
   std::ifstream projects("projects.txt");
-  if(!projects.is_open()){
-    std::cout << "Couldn't open projects.txt " <<std::endl;
+  if (!projects.is_open())
+  {
+    std::cout << "Couldn't open projects.txt " << std::endl;
     return 0;
   }
 
   std::string project;
-  while(!projects.eof()){
-    std::getline(projects,project);
+  while (!projects.eof())
+  {
+    std::getline(projects, project);
     c1.perform(project);
   }
 

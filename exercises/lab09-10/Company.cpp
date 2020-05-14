@@ -75,6 +75,7 @@ double Company::reliabilityRate() const
     return (double)successfulTasks / tasksReceived;
 }
 
-std::ostream& operator<<(std::ostream& os, const Company& other){
+std::ostream &operator<<(std::ostream &os, const Company &other)
+{
     other.printStatus(os);
 }

@@ -15,9 +15,9 @@ public:
 
     bool perform(std::string);
 
-    Company* clone();
+    Company *clone();
 
-    void printStatus(std::ostream&) const;
+    void printStatus(std::ostream &) const;
 
-    friend std::ostream& operator<<(std::ostream&, Company&);
+    friend std::ostream &operator<<(std::ostream &, Company &);
 };

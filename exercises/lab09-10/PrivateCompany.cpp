@@ -49,10 +49,12 @@ bool PrivateCompany::perform(std::string task)
     }
 }
 
-Company* PrivateCompany::clone(){
+Company *PrivateCompany::clone()
+{
     return new PrivateCompany(*this);
 }
 
-void PrivateCompany::printStatus(std::ostream&os ) const{
-    os << "Private company:" << name << " ,k = "<< kWillFail <<  " ,reliability rate: " << reliabilityRate() << std::endl;
+void PrivateCompany::printStatus(std::ostream &os) const
+{
+    os << "Private company:" << name << " ,k = " << kWillFail << " ,reliability rate: " << reliabilityRate() << std::endl;
 }

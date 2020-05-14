@@ -49,10 +49,12 @@ bool StateCompany::perform(std::string task)
     }
 }
 
-Company* StateCompany::clone(){
+Company *StateCompany::clone()
+{
     return new StateCompany(*this);
 }
 
-void StateCompany::printStatus(std::ostream& os) const{
+void StateCompany::printStatus(std::ostream &os) const
+{
     os << "State company:" << name << " reliability rate: " << reliabilityRate() << std::endl;
 }

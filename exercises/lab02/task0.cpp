@@ -1,31 +1,39 @@
-#include<iostream>
-#include"helperFunctions.h"
+#include <iostream>
+#include "helperFunctions.h"
 
-double id(double x){
+double id(double x)
+{
   return x;
 }
 
-double succ(double x){
+double succ(double x)
+{
   return x + 1;
 }
 
-double square(double x){
+double square(double x)
+{
   return x * x;
 }
 
-void map(double* arr, size_t sz, double(*f)(double)){
-  for (size_t i = 0; i < sz ; ++i){
+void map(double *arr, size_t sz, double (*f)(double))
+{
+  for (size_t i = 0; i < sz; ++i)
+  {
     arr[i] = f(arr[i]);
   }
 }
 
-void mapMatrix(double** arr, size_t sz, double(*f)(double)){
-  for (size_t i = 0; i < sz ; ++i){
+void mapMatrix(double **arr, size_t sz, double (*f)(double))
+{
+  for (size_t i = 0; i < sz; ++i)
+  {
     map(arr[i], sz, f);
   }
 }
 
-int main(){
+int main()
+{
 
   //testing first part of the task
   double arr[5] = {1, 2, 3, 4, 5};
@@ -42,8 +50,8 @@ int main(){
 
   //alternatively we should create the matrix using dynamic memory - this way we wont have trouble when passing the matrix to the function
   double matrix[3][3] = {1, 2, 3,
-                      4, 5, 6,
-                      7, 8, 9};
+                         4, 5, 6,
+                         7, 8, 9};
   printMatrix(matrix);
   printSeparationLine();
 

@@ -1,7 +1,7 @@
-#include<iostream>
+#include <iostream>
 
 using doubleFrom3Ints = double (*)(int, int, int);
-using intFromInt = int(*)(int);
+using intFromInt = int (*)(int);
 
 int next(int number)
 {
@@ -52,4 +52,3 @@ int main()
 
     std::cout << answerFunction(n, m, a) << std::endl;
 }
-

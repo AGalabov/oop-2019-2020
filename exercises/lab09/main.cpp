@@ -27,7 +27,7 @@ int main()
     c1.perform("Learn where the hot water is");
     std::cout << c1.reliabilityRate();
 
-    Company** companies = new Company*[2];
+    Company **companies = new Company *[2];
 
     companies[0] = &c;
     companies[1] = &c1;

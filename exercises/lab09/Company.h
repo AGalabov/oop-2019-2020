@@ -5,7 +5,7 @@
 class Company
 {
 private:
-    void copy(const Company&);
+    void copy(const Company &);
     void clear();
 
 protected:
@@ -15,13 +15,13 @@ protected:
 
 public:
     Company();
-    Company(const std::string&);
-    Company(const Company&);
-    Company& operator=(const Company&);
+    Company(const std::string &);
+    Company(const Company &);
+    Company &operator=(const Company &);
     virtual ~Company();
 
     std::string getName() const;
-    void setName(const std::string&);
+    void setName(const std::string &);
     int getTasksReceived() const;
     int getSuccessfulTasks() const;
 

@@ -1,28 +1,28 @@
 #include "PrivateCompany.h"
 
-PrivateCompany::PrivateCompany(): Company(), kWillFail(2)
+PrivateCompany::PrivateCompany() : Company(), kWillFail(2)
 {
 }
 
-PrivateCompany::PrivateCompany(const std::string& name, const int k)
+PrivateCompany::PrivateCompany(const std::string &name, const int k)
     : Company(name), kWillFail(k)
 {
 }
 
-PrivateCompany::PrivateCompany(const PrivateCompany& other): Company(other)
+PrivateCompany::PrivateCompany(const PrivateCompany &other) : Company(other)
 {
-    this -> kWillFail = other.kWillFail;
+    this->kWillFail = other.kWillFail;
 }
 
-PrivateCompany& PrivateCompany::operator=(const PrivateCompany& other)
+PrivateCompany &PrivateCompany::operator=(const PrivateCompany &other)
 {
-    if(this != &other)
+    if (this != &other)
     {
         // CLEAR IF ANYTHING
-        this -> name = other.name;
-        this -> tasksReceived = other.tasksReceived;
-        this -> successfulTasks = other.successfulTasks;
-        this -> kWillFail = other.kWillFail;
+        this->name = other.name;
+        this->tasksReceived = other.tasksReceived;
+        this->successfulTasks = other.successfulTasks;
+        this->kWillFail = other.kWillFail;
     }
     return *this;
 }
@@ -34,15 +34,17 @@ PrivateCompany::~PrivateCompany()
 
 bool PrivateCompany::perform(std::string task)
 {
-    std::cout << this -> name << " is performing task: " << task << std::endl; 
-    this -> tasksReceived++;
-    if(this -> tasksReceived % this -> kWillFail != 0)
+    std::cout << this->name << " is performing task: " << task << std::endl;
+    this->tasksReceived++;
+    if (this->tasksReceived % this->kWillFail != 0)
     {
-        this -> successfulTasks++;
-        std::cout <<  "Task was performed successfully!\n";
+        this->successfulTasks++;
+        std::cout << "Task was performed successfully!\n";
         return true;
-    } else {
-        std::cout <<  "Performing the task failed!\n";
+    }
+    else
+    {
+        std::cout << "Performing the task failed!\n";
         return false;
     }
 }

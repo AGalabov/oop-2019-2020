@@ -1,12 +1,13 @@
 #pragma once
-#include<iostream>
+#include <iostream>
 
-class Entity{
-  protected:
-  double X,Y;
+class Entity
+{
+protected:
+  double X, Y;
 
-  public:
-  Entity(double = 0.0, double = 0.0) ;
+public:
+  Entity(double = 0.0, double = 0.0);
   ~Entity();
 
   void setCoordinates(double, double);

@@ -1,12 +1,12 @@
 #pragma once
-#include<iostream>
-#include<cstring>
+#include <iostream>
+#include <cstring>
 
-class Identity{
+class Identity
+{
   int id;
 
-  public:
-  
+public:
   Identity(int);
   ~Identity();
 

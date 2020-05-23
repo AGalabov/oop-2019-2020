@@ -1,4 +1,4 @@
-# Упражнение 11 (24.04.2020г.) - Виртуални функции. Абстрактни класове. Статични член данни.
+# Упражнение 11 (22.05.2020г.) - Изключения. Итератори.
 
 ## Изключения (Exceptions)
 - `throw`, `try`, `catch`
@@ -9,8 +9,8 @@
 - `begin()`
 - `end()`
 - `advance(ptr, 3)`
-- `auto it = next(ptr, 3)`
-- `auto it1 = prev(ftr, 3)`
+- `next(ptr, 3)`
+- `prev(ftr, 3)`
 - `std::insert_iterator inserter(Container& c, typename Container::iterator i) `
 
 [_Предишно упражнение_](../lab09-10)

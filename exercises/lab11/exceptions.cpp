@@ -3,7 +3,6 @@
 #include <string>
 #include <vector>
 
-
 // Define a custom exception - TASK 3
 class MyException : public std::exception
 {
@@ -95,7 +94,6 @@ int main()
         std::cout << "A Generic Error occurred: " << std::endl;
     }
 
-
     std::cout << "\n-----------------TASK 3-----------------\n";
 
     try
@@ -121,7 +119,7 @@ int main()
                   << err.what() << std::endl;
     }
 
-    std::cout << "\nProgram will finish!\n";
+    std::cout << "\nProgram will finishasd!\n";
 
     return 0;
 }
